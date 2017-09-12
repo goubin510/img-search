@@ -1,0 +1,27 @@
+extends layout
+
+block content
+
+  link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel="stylesheet")
+
+  .main.container
+    .row
+      .col-md-6.col-md-offset-3.jumbotron
+        h1.display-4.m-b-2 Add one
+
+        // register form
+        form(method='post' action='/add')
+          span #{mess}
+          div.form-group
+            label(for='url') Url :
+            input#name.form-control(type='text', placeholder='url' name='url')
+          div.form-group
+            label(for='snippet') Snippet :
+            input#name.form-control(type='text', placeholder='snippet' name='snippet')
+          div.form-group
+            label(for='thumbnail') Thumbnail :
+            input#name.form-control(type='text', placeholder='thumbnail' name='thumbnail')
+          div.form-group
+            label(for='context') Context :
+            input#name.form-control(type='text', placeholder='context' name='context')
+          button.btn.btn-primary(type='submit') Add
